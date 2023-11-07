@@ -1,0 +1,40 @@
+﻿@model MvcMusicStore.Models.Genre
+ 
+@{
+    ViewBag.Title = "Buscar Albums";
+}
+ 
+
+
+
+<div class="col-lg-9 col-md-9 col-sm-8 genre text-center container py-5" style="display:flexbox">
+    <h2><em>@Model.Name</em> Album</h2>
+      
+     <div class="row">
+        @foreach (var album in Model.Albums)
+        {
+          <div class="col-lg-3 col-md-2 mb-1">
+            <div class="card">
+                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+                    <a href="@Url.Action("Details", new { id = album.AlbumId })"><img alt="@album.Title" src="@album.AlbumArtUrl" /></a>
+                        
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details", new { id = album.AlbumId })"><span>@album.Title</span></a>
+                </div>
+            </div>
+          </div> 
+        }
+    </div>
+</div>
+
+
+  
+   
+      
+  
+  
+    
+
+
+        

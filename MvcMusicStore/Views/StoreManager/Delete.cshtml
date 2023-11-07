@@ -1,0 +1,17 @@
+﻿@model MvcMusicStore.Models.Album
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+    <h2>Confirmacion de borrado</h2>
+
+    <p>Esta seguro que desea borrar el album con titulo <strong>@Model.Title</strong>?
+    </p>
+    @using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Borrar" />
+    </p>    <p>
+    @Html.ActionLink("Regresar", "Index")
+    </p>
+}

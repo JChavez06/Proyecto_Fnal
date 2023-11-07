@@ -1,0 +1,31 @@
+﻿﻿@model MvcMusicStore.Models.Order
+
+@{
+    ViewBag.Title = "Pago y direccion";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    
+    <h2>Pago y Direccion</h2>
+    <fieldset>
+        <legend>Información del carrito</legend>
+
+        @Html.EditorForModel()
+    </fieldset>
+    <fieldset>
+        <legend>Pago</legend>
+        <p>Estamos realizando una promoción: toda la música es gratis con el código promocional: "FREE"</p>
+
+        <div class="editor-label">
+            @Html.Label("Promo Code")
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("PromoCode")
+        </div>
+    </fieldset>
+    
+    <input class="btn btn-primary" type="submit" value="Cargar orden" />
+}

@@ -1,0 +1,27 @@
+﻿@model List<MvcMusicStore.Models.Album>
+@{
+    ViewBag.Title = "NEON CITY MUSIC STORE";
+}
+<div class="col-lg-9 col-md-12 col-sm-10 center-img">
+    <img src="/content/Images/home-showcase.png" class="img-fluid" alt="...">
+</div>
+
+<h3><em>Top</em> los mas reciente</h3>
+<div class="row col-lg-9 col-md-12 col-sm-10">
+<!--<ul id="album-list">-->
+    @foreach (var album in Model)
+    {
+        <div class="col-lg-2 col-md-2 mb-2">
+            <div class="card">
+                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+                    <a href="@Url.Action("Details", "Store", new { id = album.AlbumId })"><img alt="@album.Title" src="@album.AlbumArtUrl" /></a>
+                        
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details", "Store", new { id = album.AlbumId })"><span>@album.Title</span></a>
+                </div>
+            </div>
+          </div> 
+    }
+<!--</ul>-->
+</div>
